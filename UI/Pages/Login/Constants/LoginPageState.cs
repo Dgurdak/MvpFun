@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UI.ViewModels
+namespace UI.Pages.Login.Constants
 {
-    //public class MainFormViewModel
-    //{
-    //}
+    class LoginPageState
+    {
+    }
 }

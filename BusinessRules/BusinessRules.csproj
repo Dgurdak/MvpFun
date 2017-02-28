@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1A3413F7-F8B9-4B14-B7C2-17DAB6D2B159}</ProjectGuid>
+    <ProjectGuid>{4EC2576F-01F3-4968-A734-EC2238C9F194}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ServiceLayer</RootNamespace>
-    <AssemblyName>ServiceLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>BusinessRules</RootNamespace>
+    <AssemblyName>BusinessRules</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -35,19 +35,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="ICrazyApi.cs" />
-    <Compile Include="IShipService.cs" />
+    <Compile Include="IsOrderToOldToShipForFirstTime.cs" />
+    <Compile Include="IsShipmentAutoCubed.cs" />
+    <Compile Include="IsWeightAcceptable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShipService.cs" />
-    <Compile Include="Types\SubmitIdInventoryResult.cs" />
-    <Compile Include="Types\SubmitWeightResultCodes.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

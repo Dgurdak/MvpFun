@@ -2,31 +2,18 @@
 using System.Runtime.CompilerServices;
 using UI.Annotations;
 
-namespace UI.Pages.Login
+namespace UI.Pages.ScaleSetup
 {
-    public class LoginViewModel : INotifyPropertyChanged
+    public class ScaleSetupViewModel : INotifyPropertyChanged
     {
-        private bool _blnBadLoginVisible;
-        private string _strName;
+        private bool _blnUseScale;
 
-        private string _strPassword;
-
-        public string Name
+        public bool UseScale
         {
-            get { return _strName; }
+            get { return _blnUseScale; }
             set
             {
-                _strName = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Password
-        {
-            get { return _strPassword; }
-            set
-            {
-                _strPassword = value;
+                _blnUseScale = value;
                 OnPropertyChanged();
             }
         }

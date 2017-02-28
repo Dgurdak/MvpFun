@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB81B91A-E642-4A0B-A80F-07442EA4654C}</ProjectGuid>
+    <ProjectGuid>{BDB7FF72-C909-4820-9C1C-57BF120E1E45}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UI</RootNamespace>
-    <AssemblyName>UI</AssemblyName>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,52 +30,31 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\Pages.cs" />
-    <Compile Include="MainForm\IMainForm.cs" />
-    <Compile Include="MainForm\MainFormPresenter.cs" />
-    <Compile Include="MainForm\MainFormViewModel.cs" />
-    <Compile Include="Pages\IGenericPagePresenter.cs" />
-    <Compile Include="Pages\ILoggedInPagePresenter.cs" />
-    <Compile Include="Pages\Login\Constants\LoginPageState.cs" />
-    <Compile Include="Pages\Login\LoginControlPresenter.cs" />
-    <Compile Include="Pages\Login\Types\ValidateLoginEventArgs.cs" />
-    <Compile Include="Pages\ScaleSetup\IScaleSetupControl.cs" />
-    <Compile Include="Pages\ScaleSetup\ScaleSetupControlPresenter.cs" />
-    <Compile Include="Pages\ScaleSetup\ScaleSetupViewModel.cs" />
-    <Compile Include="Pages\Ship\Constants\ShipStates.cs" />
-    <Compile Include="Pages\Ship\ShipControlPesenter.cs" />
-    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="General\GetInitialScaleEnabled.cs" />
+    <Compile Include="Pages\Login\VerifyLoginCredentials.cs" />
+    <Compile Include="Pages\Ship\Types\SubmitIdInventoryResult.cs" />
+    <Compile Include="Pages\Ship\Utilities\GetManualEntryWeight.cs" />
+    <Compile Include="Pages\Ship\PrintLabel.cs" />
+    <Compile Include="Pages\Ship\SubmitIdInventory.cs" />
+    <Compile Include="Pages\Ship\SubmitWeight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pages\Login\ILoginControl.cs" />
-    <Compile Include="Pages\Ship\IShipControl.cs" />
-    <Compile Include="Pages\Login\LoginViewModel.cs" />
-    <Compile Include="ViewModels\MainFormViewModel.cs" />
-    <Compile Include="Pages\Ship\ShipViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Pages\Ship\Utilities\" />
-    <Folder Include="UserControlPresenter\" />
-    <Folder Include="Utilities\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{bdb7ff72-c909-4820-9c1c-57bf120e1e45}</Project>
-      <Name>Core</Name>
+    <ProjectReference Include="..\BusinessRules\BusinessRules.csproj">
+      <Project>{4ec2576f-01f3-4968-a734-ec2238c9f194}</Project>
+      <Name>BusinessRules</Name>
     </ProjectReference>
     <ProjectReference Include="..\PrinterInterface\PrinterInterface.csproj">
       <Project>{673d5e1f-00ec-4790-9220-2864f6b00f46}</Project>

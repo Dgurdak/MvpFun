@@ -1,29 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UI.Pages.Login.Types;
 
-namespace UI.UserControlPresenter
+namespace UI.Pages.Login
 {
-    public interface ILoginPageControl
-    {
-        event EventHandler SuccessfulLogin;
-        event EventHandler<ValidateLoginEventArgs> ValidateLogin;
-
-        void BindToViewModel();
-
-    }
-
-    public class ValidateLoginEventArgs : EventArgs
-    {
-        public int IdPerson { get; }
-        public string Password { get; }
-
-        public ValidateLoginEventArgs(int intIdPerson, string strPassword)
-        {
-            IdPerson = intIdPerson;
-            Password = strPassword;
-        }
+    public interface ILoginControl
+    {        
+        event EventHandler SubmitButtonPressed;
+        void BindToViewModel(LoginViewModel model);
+        bool LoginErrorVisible { get; set; }
     }
 }

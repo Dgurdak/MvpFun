@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Constants;
+using UI.MainForm;
+using WinForms.Utilities;
 
 namespace WinForms
 {
@@ -15,8 +18,8 @@ namespace WinForms
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.SetCompatibleTextRenderingDefault(false);           
+            Application.Run(GetMainForm.Execute());
         }
     }
 }
